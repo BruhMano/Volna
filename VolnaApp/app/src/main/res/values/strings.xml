@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Test_android</string>
+    <string name="main_b">Гланая</string>
+    <string name="kino_b">Кино</string>
+    <string name="ser_b">Сериалы</string>
+    <string name="bm_b">Закладки</string>
+
+    <string name="main_poster_1">Марсианин</string>
+    <string name="main_poster_1_2">хуё моё</string>
+    <string name="main_poster_2">Фанта</string>
+    <string name="main_poster_2_2">из фантастик</string>
+    <string name="main_poster_3">Матрикс</string>
+    <string name="main_poster_3_2">хуятрикс</string>
+
+    <string name="comedy">Комедии</string>
+    <string name="family">Фмльмы для всей семьи</string>
+
+</resources>
