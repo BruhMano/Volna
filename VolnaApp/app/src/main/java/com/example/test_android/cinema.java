@@ -1,10 +1,10 @@
 package com.example.test_android;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 
-public class cinema extends AppCompatActivity {
+import androidx.appcompat.app.AppCompatActivity;
+
+public class Cinema extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

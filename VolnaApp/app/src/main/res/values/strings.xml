@@ -13,6 +13,7 @@
     <string name="main_poster_3_2">хуятрикс</string>
 
     <string name="comedy">Комедии</string>
-    <string name="family">Фмльмы для всей семьи</string>
+    <string name="family">Фильмы для всей семьи</string>
+    <string name="favorite">Избранное</string>
 
 </resources>

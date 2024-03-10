@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".views.AboutMovieActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/pictureMovieAboutMovieActivity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            tools:ignore="MissingConstraints"
+            tools:src="@tools:sample/avatars" />
+
+        <TextView
+            android:id="@+id/titleMovieAboutMovieActivity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAllCaps="true"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/pictureMovieAboutMovieActivity"
+            tools:text="title" />
+
+        <TextView
+            android:id="@+id/yearMovieAboutMovieActivity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/holo_orange_light"
+            android:textSize="18sp"
+            android:textStyle="italic"
+            app:layout_constraintTop_toBottomOf="@id/titleMovieAboutMovieActivity"
+            tools:text="year" />
+
+        <TextView
+            android:id="@+id/descriptionMovieAboutMovieActivity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@id/yearMovieAboutMovieActivity"
+            tools:text="description" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/trailersRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:nestedScrollingEnabled="false"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintTop_toBottomOf="@id/descriptionMovieAboutMovieActivity"
+            tools:layout_editor_absoluteX="0dp"
+            tools:listitem="@layout/trailer_item" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/reviewRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:nestedScrollingEnabled="false"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintTop_toBottomOf="@id/trailersRecyclerView"
+             />
+
+
+        <ImageView
+            android:id="@+id/favoriteStar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            tools:srcCompat="@android:drawable/star_big_on"
+            tools:ignore="MissingConstraints"
+            app:layout_constraintBottom_toBottomOf="@id/pictureMovieAboutMovieActivity"
+            app:layout_constraintTop_toBottomOf="@id/pictureMovieAboutMovieActivity"
+            app:layout_constraintEnd_toEndOf="@id/pictureMovieAboutMovieActivity"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>

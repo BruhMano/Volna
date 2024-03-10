@@ -1,0 +1,46 @@
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="8dp"
+    android:layout_margin="4dp"
+    app:cardUseCompatPadding="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="5dp"
+        >
+
+        <TextView
+            android:id="@+id/titleReview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:padding="8dp"
+            tools:text="Trailer"
+
+            />
+        <TextView
+            android:id="@+id/typeReview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:padding="8dp"
+            tools:text="Trailer" />
+        <TextView
+            android:id="@+id/review"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize="14sp"
+            android:padding="8dp"
+            android:textStyle="italic"
+            tools:text="Trailer" />
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>
