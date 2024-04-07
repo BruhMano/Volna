@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">Test_android</string>
-    <string name="main_b">Гланая</string>
+    <string name="main_b">Главная</string>
     <string name="kino_b">Кино</string>
     <string name="ser_b">Сериалы</string>
     <string name="bm_b">Закладки</string>
@@ -14,5 +14,8 @@
 
     <string name="comedy">Комедии</string>
     <string name="family">Фмльмы для всей семьи</string>
+    <string name="imdb">IMDb: </string>
+    <string name="watch_video">Смотреть</string>
+    <string name="download_video">Загрузить</string>
 
 </resources>

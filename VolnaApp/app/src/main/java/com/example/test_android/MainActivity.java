@@ -5,9 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ScrollView;
-import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -17,7 +14,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
     public void to_cinema(View viev){
-        Intent intent = new Intent(this, cinema.class);
+        Intent intent = new Intent(this, CinemaActivity.class);
         startActivity(intent);
     }
 

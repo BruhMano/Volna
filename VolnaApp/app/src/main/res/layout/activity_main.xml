@@ -184,14 +184,16 @@
                         android:src="@drawable/orig"
                         app:riv_corner_radius="15dp"
                         android:layout_marginHorizontal="10dp"/>
+
                     <com.makeramen.roundedimageview.RoundedImageView
 
                         android:layout_width="150dp"
                         android:layout_height="match_parent"
+                        android:layout_marginHorizontal="10dp"
                         android:contentDescription="@null"
                         android:src="@drawable/orig"
-                        app:riv_corner_radius="15dp"
-                        android:layout_marginHorizontal="10dp"/>
+                        app:riv_corner_radius="15dp" />
+
                     <com.makeramen.roundedimageview.RoundedImageView
 
                         android:layout_width="150dp"
