@@ -57,5 +57,8 @@ dependencies {
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
     implementation ("com.makeramen:roundedimageview:2.3.0")
     implementation("org.apache.httpcomponents:httpclient:4.3.4")
+    implementation("com.google.code.gson:gson:2.7")
+
+
 
 }
