@@ -92,6 +92,7 @@
                 android:layout_height="40dp"
                 android:background="@null"
                 android:scaleType="fitCenter"
+                android:onClick="to_video"
                 android:src="@drawable/play"/>
             <ImageButton
                 android:id="@+id/download_video"
