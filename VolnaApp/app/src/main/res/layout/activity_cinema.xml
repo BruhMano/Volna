@@ -11,16 +11,27 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
-
         <ImageView
             android:id="@+id/imageCinema"
             android:layout_width="match_parent"
-            android:layout_height="470dp"
+            android:layout_height="450dp"
             android:scaleType="centerCrop"
-            android:src="@drawable/interstellar">
+            android:src="@drawable/brother2"
+            >
         </ImageView>
+
+        <TextView
+            android:id="@+id/name_film"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/allerta"
+            android:gravity="center"
+            android:text="БРАТ 2"
+            android:textColor="@color/cinema_name_film"
+            android:textSize="20sp"
+            android:textStyle="bold" />
         <LinearLayout
-            android:layout_width="300dp"
+            android:layout_width="270dp"
             android:layout_height="wrap_content"
             android:paddingTop="2dp"
             android:layout_gravity="center_horizontal"
@@ -30,24 +41,25 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:layout_weight="1">
+
                 <TextView
                     android:id="@+id/rating"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:textColor="@color/cinema_text"
-                    android:fontFamily="@font/roboto_bold"
-                    android:textSize="20sp"
-                    android:text="@string/imdb"/>
+                    android:fontFamily="sans-serif-black"
+                    android:textSize="16sp"
+                    android:text="@string/imdb"
+                    android:textColor="@color/cinema_text"/>
                 <TextView
                     android:id="@+id/rating_value"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:textColor="@color/cinema_text"
-                    android:fontFamily="@font/roboto_bold"
-                    android:textSize="20sp"
-                    android:text="8.70"/>
+                    android:fontFamily="sans-serif-black"
+                    android:textSize="16sp"
+                    android:text="8.3"/>
             </LinearLayout>
             <TextView
                 android:id="@+id/age"
@@ -56,8 +68,8 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:textColor="@color/cinema_text"
-                android:fontFamily="@font/roboto_bold"
-                android:textSize="20sp"
+                android:fontFamily="sans-serif-black"
+                android:textSize="16sp"
                 android:text="18+"/>
             <TextView
                 android:id="@+id/duration"
@@ -66,24 +78,25 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:textColor="@color/cinema_text"
-                android:fontFamily="@font/roboto_bold"
-                android:textSize="20sp"
+                android:fontFamily="sans-serif-black"
+                android:textSize="16sp"
                 android:text="169 мин."/>
         </LinearLayout>
+
         <TextView
             android:id="@+id/genre"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-medium"
             android:gravity="center"
+            android:text="фантастика, драма, приключения"
             android:textColor="@color/cinema_text"
-            android:textStyle="normal"
-            android:fontFamily="@font/roboto_bold"
-            android:textSize="17sp"
-            android:text="фантастика, драма, приключения"/>
+            android:textSize="16sp"
+            android:textStyle="normal" />
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="35dp"
             android:orientation="horizontal"
             android:gravity="center">
             <ImageButton
@@ -101,15 +114,16 @@
                 android:scaleType="fitCenter"
                 android:src="@drawable/download"/>
         </LinearLayout>
+
         <TextView
-                android:id="@+id/descriptions"
-                android:layout_width="match_parent"
-                android:layout_height="115dp"
-                android:gravity="left"
-                android:textColor="@color/cinema_text_desc"
-                android:fontFamily="@font/roboto_bold"
-                android:textSize="12sp"
-                android:text="Когда засуха, пыльные бури и вымирание растений приводят человечество к продовольственному кризису, коллектив исследователей и учёных отправляется сквозь червоточину (которая предположительно соединяет области пространства-времени через большое расстояние) в путешествие, чтобы превзойти прежние ограничения для космических путешествий человека и найти планету с подходящими для человечества условиями."/>
+            android:id="@+id/descriptions"
+            android:layout_width="match_parent"
+            android:layout_height="110dp"
+            android:fontFamily="sans-serif"
+            android:gravity="left"
+            android:text="Демобилизовавшись, Данила Багров вернулся в родной городок. Но скучная жизнь российской провинции не устраивала его, и он решился податься в Петербург, где, по слухам, уже несколько лет процветает его старший брат. Данила нашел брата. Но все оказалось не так просто — брат работает наемным убийцей."
+            android:textColor="@color/cinema_text_desc"
+            android:textSize="12sp" />
 
     </LinearLayout>
 
