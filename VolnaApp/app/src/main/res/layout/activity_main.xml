@@ -74,15 +74,16 @@
                             >
 
                             <com.makeramen.roundedimageview.RoundedImageView
-                                android:id="@+id/imageView2"
+                                android:id="@+id/img1"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:contentDescription="@null"
+                                android:onClick="to_movie1"
                                 android:src="@drawable/c1b660b1e078116a3254054b2f641e44"
-                                app:riv_corner_radius="15dp"
-                                />
+                                app:riv_corner_radius="15dp" />
 
                             <TextView
+                                android:id="@+id/title1"
                                 android:layout_width="wrap_content"
                                 android:layout_height="30dp"
                                 android:layout_marginStart="15dp"
@@ -93,6 +94,7 @@
                                 android:textSize="20sp" />
 
                             <TextView
+                                android:id="@+id/desc1"
                                 android:layout_width="wrap_content"
                                 android:layout_height="20dp"
                                 android:layout_alignParentBottom="true"
@@ -111,14 +113,16 @@
                             android:layout_marginHorizontal="10dp">
 
                             <com.makeramen.roundedimageview.RoundedImageView
-                                android:id="@+id/imageView3"
+                                android:id="@+id/img2"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:contentDescription="@null"
+                                android:onClick="to_movie2"
                                 android:src="@drawable/a1rejfghjvghjfv"
-                                app:riv_corner_radius="15dp"/>
+                                app:riv_corner_radius="15dp" />
 
                             <TextView
+                                android:id="@+id/title2"
                                 android:layout_width="wrap_content"
                                 android:layout_height="30dp"
                                 android:layout_marginStart="15dp"
@@ -129,6 +133,7 @@
                                 android:textSize="20sp" />
 
                             <TextView
+                                android:id="@+id/desc2"
                                 android:layout_width="wrap_content"
                                 android:layout_height="20dp"
                                 android:layout_alignParentBottom="true"
@@ -146,14 +151,16 @@
                             android:layout_marginHorizontal="10dp">
 
                             <com.makeramen.roundedimageview.RoundedImageView
-                                android:id="@+id/imageView4"
+                                android:id="@+id/img3"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:contentDescription="@null"
+                                android:onClick="to_movie3"
                                 android:src="@drawable/b2ceea2edb4fd6368623ff775f71487d"
-                                app:riv_corner_radius="15dp"/>
+                                app:riv_corner_radius="15dp" />
 
                             <TextView
+                                android:id="@+id/title3"
                                 android:layout_width="wrap_content"
                                 android:layout_height="30dp"
                                 android:layout_marginStart="15dp"
@@ -164,6 +171,7 @@
                                 android:textSize="20sp" />
 
                             <TextView
+                                android:id="@+id/desc3"
                                 android:layout_width="wrap_content"
                                 android:layout_height="20dp"
                                 android:layout_alignParentBottom="true"
@@ -184,7 +192,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
-                android:layout_marginStart="10dp"
                 android:fontFamily="@font/roboto_bold"
                 android:text="@string/comedy"
                 android:textColor="@color/white"
@@ -285,10 +292,11 @@
 
                             android:layout_width="150dp"
                             android:layout_height="match_parent"
+                            android:layout_marginHorizontal="10dp"
                             android:contentDescription="@null"
+                            android:onClick="to_movie"
                             android:src="@drawable/orig"
-                            app:riv_corner_radius="15dp"
-                            android:layout_marginHorizontal="10dp"/>
+                            app:riv_corner_radius="15dp" />
                         <com.makeramen.roundedimageview.RoundedImageView
 
                             android:layout_width="150dp"
@@ -380,7 +388,7 @@
                 android:clickable="true"
                 android:contentDescription="@null"
                 android:focusable="true"
-                android:onClick="to_cinema"
+                android:onClick="to_movie"
                 android:src="@drawable/kino_but" />
 
             <TextView
@@ -448,6 +456,5 @@
 
     </LinearLayout>
 
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>
+
