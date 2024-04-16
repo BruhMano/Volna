@@ -322,7 +322,7 @@
                 android:clickable="true"
                 android:contentDescription="@null"
                 android:focusable="true"
-                android:onClick="to_cinema"
+                android:onClick="to_movie"
                 android:src="@drawable/kino_but" />
 
             <TextView

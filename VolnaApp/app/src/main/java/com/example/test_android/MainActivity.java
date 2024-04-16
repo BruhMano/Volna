@@ -34,7 +34,7 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    String json;
+    JsonArray JSONresponse;
 
     class ImageTask extends AsyncTask<String, Void, Bitmap>{
 
@@ -79,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
         }
         protected void onPostExecute(String response){
             Gson gson = new Gson();
-            JsonArray JSONresponse = gson.fromJson(response, JsonArray.class);
+            JSONresponse = gson.fromJson(response, JsonArray.class);
             int[][] ids =  {{R.id.img1, R.id.title1, R.id.desc1},
                            {R.id.img2, R.id.title2, R.id.desc2},
                            {R.id.img3, R.id.title3, R.id.desc3}};
@@ -91,6 +91,7 @@ public class MainActivity extends AppCompatActivity {
                 Movie shrek = gson.fromJson(json, Movie.class);
                 text.setText(shrek.title);
                 desc.setText(shrek.title);
+                
                 //new ImageTask().execute("http://176.77.109.225/content/posters/36c57d9f4443e02ed06b6cdd408d78a1.jpg");
             }
         }
@@ -103,9 +104,10 @@ public class MainActivity extends AppCompatActivity {
         String url = "http://176.77.109.225/main_screeen.php";
         new VolnaQueryTask().execute(url);
     }
-    public void to_cinema(View view){
+    public void to_movie(View view){
+        String json = JSONresponse.get(0).toString();
         Intent intent = new Intent(this, cinema.class);
+        intent.putExtra("json",json);
         startActivity(intent);
     }
-
 }
