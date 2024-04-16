@@ -3,7 +3,6 @@ package com.example.test_android;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.media.Image;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
@@ -20,9 +19,7 @@ import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
-import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
-import org.apache.http.entity.BasicHttpEntity;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.message.BasicNameValuePair;
@@ -37,9 +34,7 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    TextView text;
-    ImageView img;
-    JsonArray JSONresponse;
+    String json;
 
     class ImageTask extends AsyncTask<String, Void, Bitmap>{
 
@@ -58,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         protected void onPostExecute(Bitmap  bitmap){
-            img.setImageBitmap(bitmap);
+            //img.setImageBitmap(bitmap);
         }
     }
 
@@ -84,8 +79,20 @@ public class MainActivity extends AppCompatActivity {
         }
         protected void onPostExecute(String response){
             Gson gson = new Gson();
-            JSONresponse = gson.fromJson(response, JsonArray.class);
-
+            JsonArray JSONresponse = gson.fromJson(response, JsonArray.class);
+            int[][] ids =  {{R.id.img1, R.id.title1, R.id.desc1},
+                           {R.id.img2, R.id.title2, R.id.desc2},
+                           {R.id.img3, R.id.title3, R.id.desc3}};
+            for(int i = 0;i<3;++i) {
+                String json = JSONresponse.get(i).toString();
+                TextView text = findViewById(ids[i][1]);
+                ImageView img = findViewById(ids[i][0]);
+                TextView desc = findViewById(ids[i][2]);
+                Movie shrek = gson.fromJson(json, Movie.class);
+                text.setText(shrek.title);
+                desc.setText(shrek.title);
+                //new ImageTask().execute("http://176.77.109.225/content/posters/36c57d9f4443e02ed06b6cdd408d78a1.jpg");
+            }
         }
     }
 
@@ -93,15 +100,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        text = findViewById(R.id.texti);
-        img = findViewById(R.id.imageView2);
         String url = "http://176.77.109.225/main_screeen.php";
         new VolnaQueryTask().execute(url);
-        String JSONresponse = jsonArray.get(0).toString();
-        Movie shrek = gson.fromJson(json, Movie.class);
-        text.setText(shrek.title);
-        new ImageTask().execute("http://176.77.109.225/content/posters/36c57d9f4443e02ed06b6cdd408d78a1.jpg");
-
     }
     public void to_cinema(View view){
         Intent intent = new Intent(this, cinema.class);
