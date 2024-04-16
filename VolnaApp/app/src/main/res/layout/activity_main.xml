@@ -2,15 +2,17 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background"
     tools:context=".MainActivity">
 
     <ScrollView
-        android:layout_width="412dp"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginBottom="50dp"
+        android:layout_marginTop="50dp"
         android:fillViewport="true"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
@@ -23,188 +25,221 @@
             android:contentDescription="@null"
             android:orientation="vertical">
 
-            <HorizontalScrollView
-                android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:layout_marginTop="70dp"
-                android:contentDescription="@null">
+            <FrameLayout
 
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent">
+                android:layout_width="wrap_content"
+                android:layout_height="220dp"
+                android:layout_marginTop="30dp">
 
-                    <TextView
+                <ImageView
+                    android:layout_width="70dp"
+                    android:layout_height="142dp"
+                    android:layout_gravity="end"
+                    android:src="@drawable/wave3" />
+
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:layout_marginTop="20dp"
+                    android:contentDescription="@null">
+
+                    <LinearLayout
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@null" />
-
-                    <RelativeLayout
-                        android:layout_width="350dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginHorizontal="10dp">
-
-                        <com.makeramen.roundedimageview.RoundedImageView
-                            android:id="@+id/imageView2"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:contentDescription="@null"
-                            android:src="@drawable/c1b660b1e078116a3254054b2f641e44"
-                            app:riv_corner_radius="15dp"
-                            />
+                        android:layout_height="wrap_content">
 
                         <TextView
                             android:layout_width="wrap_content"
-                            android:layout_height="30dp"
-                            android:layout_marginStart="15dp"
-                            android:layout_marginTop="155dp"
-                            android:fontFamily="@font/roboto_bold"
-                            android:text="@string/main_poster_1"
-                            android:textColor="@color/white"
-                            android:textSize="20sp" />
+                            android:layout_height="wrap_content"
+                            android:text="@null" />
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="20dp"
-                            android:layout_alignParentBottom="true"
-                            android:layout_marginStart="15dp"
-                            android:fontFamily="@font/roboto_bold"
-                            android:text="@string/main_poster_1_2"
-                            android:textColor="@color/white"
-                            android:textSize="15sp" />
+                        <RelativeLayout
+                            android:layout_width="350dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="27dp"
 
-                    </RelativeLayout>
+                            >
+
+                            <com.makeramen.roundedimageview.RoundedImageView
+                                android:id="@+id/imageView2"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:contentDescription="@null"
+                                android:src="@drawable/c1b660b1e078116a3254054b2f641e44"
+                                app:riv_corner_radius="15dp"
+                                />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="30dp"
+                                android:layout_marginStart="15dp"
+                                android:layout_marginTop="155dp"
+                                android:fontFamily="@font/roboto_bold"
+                                android:text="@string/main_poster_1"
+                                android:textColor="@color/white"
+                                android:textSize="20sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="20dp"
+                                android:layout_alignParentBottom="true"
+                                android:layout_marginStart="15dp"
+                                android:fontFamily="@font/roboto_bold"
+                                android:text="@string/main_poster_1_2"
+                                android:textColor="@color/white"
+                                android:textSize="15sp" />
+
+                        </RelativeLayout>
 
 
-                    <RelativeLayout
-                        android:layout_width="350dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginHorizontal="10dp">
+                        <RelativeLayout
+                            android:layout_width="350dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="10dp">
 
-                        <com.makeramen.roundedimageview.RoundedImageView
-                            android:id="@+id/imageView3"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:contentDescription="@null"
-                            android:src="@drawable/a1rejfghjvghjfv"
-                            app:riv_corner_radius="15dp"/>
+                            <com.makeramen.roundedimageview.RoundedImageView
+                                android:id="@+id/imageView3"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:contentDescription="@null"
+                                android:src="@drawable/a1rejfghjvghjfv"
+                                app:riv_corner_radius="15dp"/>
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="30dp"
-                            android:layout_marginStart="15dp"
-                            android:layout_marginTop="155dp"
-                            android:fontFamily="@font/roboto_bold"
-                            android:text="@string/main_poster_2"
-                            android:textColor="@color/white"
-                            android:textSize="20sp" />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="30dp"
+                                android:layout_marginStart="15dp"
+                                android:layout_marginTop="155dp"
+                                android:fontFamily="@font/roboto_bold"
+                                android:text="@string/main_poster_2"
+                                android:textColor="@color/white"
+                                android:textSize="20sp" />
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="20dp"
-                            android:layout_alignParentBottom="true"
-                            android:layout_marginStart="15dp"
-                            android:fontFamily="@font/roboto_bold"
-                            android:text="@string/main_poster_2_2"
-                            android:textColor="@color/white"
-                            android:textSize="15sp" />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="20dp"
+                                android:layout_alignParentBottom="true"
+                                android:layout_marginStart="15dp"
+                                android:fontFamily="@font/roboto_bold"
+                                android:text="@string/main_poster_2_2"
+                                android:textColor="@color/white"
+                                android:textSize="15sp" />
 
-                    </RelativeLayout>
+                        </RelativeLayout>
 
-                    <RelativeLayout
-                        android:layout_width="350dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginHorizontal="10dp">
+                        <RelativeLayout
+                            android:layout_width="350dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="10dp">
 
-                        <com.makeramen.roundedimageview.RoundedImageView
-                            android:id="@+id/imageView4"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:contentDescription="@null"
-                            android:src="@drawable/b2ceea2edb4fd6368623ff775f71487d"
-                            app:riv_corner_radius="15dp"/>
+                            <com.makeramen.roundedimageview.RoundedImageView
+                                android:id="@+id/imageView4"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:contentDescription="@null"
+                                android:src="@drawable/b2ceea2edb4fd6368623ff775f71487d"
+                                app:riv_corner_radius="15dp"/>
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="30dp"
-                            android:layout_marginStart="15dp"
-                            android:layout_marginTop="155dp"
-                            android:fontFamily="@font/roboto_bold"
-                            android:text="@string/main_poster_3"
-                            android:textColor="@color/white"
-                            android:textSize="20sp" />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="30dp"
+                                android:layout_marginStart="15dp"
+                                android:layout_marginTop="155dp"
+                                android:fontFamily="@font/roboto_bold"
+                                android:text="@string/main_poster_3"
+                                android:textColor="@color/white"
+                                android:textSize="20sp" />
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="20dp"
-                            android:layout_alignParentBottom="true"
-                            android:layout_marginStart="15dp"
-                            android:fontFamily="@font/roboto_bold"
-                            android:text="@string/main_poster_3_2"
-                            android:textColor="@color/white"
-                            android:textSize="15sp" />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="20dp"
+                                android:layout_alignParentBottom="true"
+                                android:layout_marginStart="15dp"
+                                android:fontFamily="@font/roboto_bold"
+                                android:text="@string/main_poster_3_2"
+                                android:textColor="@color/white"
+                                android:textSize="15sp" />
 
-                    </RelativeLayout>
+                        </RelativeLayout>
 
-                </LinearLayout>
+                    </LinearLayout>
 
-            </HorizontalScrollView>
+                </HorizontalScrollView>
+            </FrameLayout>
             <TextView
                 android:id="@+id/textView7"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
+                android:layout_marginStart="10dp"
                 android:fontFamily="@font/roboto_bold"
                 android:text="@string/comedy"
                 android:textColor="@color/white"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                />
 
-            <HorizontalScrollView
-                android:layout_width="match_parent"
-                android:layout_height="250dp"
-                android:contentDescription="@null">
 
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent">
+            <FrameLayout
 
-                    <com.makeramen.roundedimageview.RoundedImageView
+                android:layout_width="wrap_content"
+                android:layout_height="250dp">
+                <ImageView
+                    android:layout_width="220dp"
+                    android:layout_height="150dp"
+                    android:src="@drawable/wave"
+                    android:layout_gravity="top|start" />
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:contentDescription="@null">
 
-                        android:layout_width="150dp"
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:layout_marginHorizontal="10dp"
-                        android:contentDescription="@null"
-                        android:src="@drawable/orig"
-                        app:riv_corner_radius="15dp" />
-
-                    <com.makeramen.roundedimageview.RoundedImageView
-
-                        android:layout_width="150dp"
-                        android:layout_height="match_parent"
-                        android:contentDescription="@null"
-                        android:src="@drawable/orig"
-                        app:riv_corner_radius="15dp"
-                        android:layout_marginHorizontal="10dp"/>
-                    <com.makeramen.roundedimageview.RoundedImageView
-
-                        android:layout_width="150dp"
-                        android:layout_height="match_parent"
-                        android:contentDescription="@null"
-                        android:src="@drawable/orig"
-                        app:riv_corner_radius="15dp"
-                        android:layout_marginHorizontal="10dp"/>
-                    <com.makeramen.roundedimageview.RoundedImageView
-
-                        android:layout_width="150dp"
-                        android:layout_height="match_parent"
-                        android:contentDescription="@null"
-                        android:src="@drawable/orig"
-                        app:riv_corner_radius="15dp"
-                        android:layout_marginHorizontal="10dp"/>
+                        >
 
 
-                </LinearLayout>
 
-            </HorizontalScrollView>
+                        <com.makeramen.roundedimageview.RoundedImageView
+
+                            android:layout_width="150dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginHorizontal="10dp"
+                            android:contentDescription="@null"
+                            android:src="@drawable/orig"
+                            app:riv_corner_radius="15dp" />
+
+                        <com.makeramen.roundedimageview.RoundedImageView
+
+                            android:layout_width="150dp"
+                            android:layout_height="match_parent"
+                            android:contentDescription="@null"
+                            android:src="@drawable/orig"
+                            app:riv_corner_radius="15dp"
+                            android:layout_marginHorizontal="10dp"/>
+                        <com.makeramen.roundedimageview.RoundedImageView
+
+                            android:layout_width="150dp"
+                            android:layout_height="match_parent"
+                            android:contentDescription="@null"
+                            android:src="@drawable/orig"
+                            app:riv_corner_radius="15dp"
+                            android:layout_marginHorizontal="10dp"/>
+                        <com.makeramen.roundedimageview.RoundedImageView
+
+                            android:layout_width="150dp"
+                            android:layout_height="match_parent"
+                            android:contentDescription="@null"
+                            android:src="@drawable/orig"
+                            app:riv_corner_radius="15dp"
+                            android:layout_marginHorizontal="10dp"/>
+
+
+                    </LinearLayout>
+
+                </HorizontalScrollView>
+
+            </FrameLayout>
 
 
 
@@ -215,55 +250,73 @@
                 android:layout_marginTop="15dp"
                 android:fontFamily="@font/roboto_bold"
                 android:text="@string/family"
+                android:layout_marginStart="10dp"
                 android:textColor="@color/white"
                 android:textSize="20sp" />
+            <FrameLayout
 
-            <HorizontalScrollView
+                android:layout_width="wrap_content"
+                android:layout_height="250dp">
+                <ImageView
+                    android:layout_width="170dp"
+                    android:layout_height="150dp"
+                    android:src="@drawable/wave2"
+                    android:layout_gravity="top|end" />
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:contentDescription="@null">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent">
+
+                        <com.makeramen.roundedimageview.RoundedImageView
+
+                            android:layout_width="150dp"
+                            android:layout_height="match_parent"
+                            android:contentDescription="@null"
+                            android:src="@drawable/orig"
+                            app:riv_corner_radius="15dp"
+                            android:layout_marginHorizontal="10dp"/>
+                        <com.makeramen.roundedimageview.RoundedImageView
+
+                            android:layout_width="150dp"
+                            android:layout_height="match_parent"
+                            android:contentDescription="@null"
+                            android:src="@drawable/orig"
+                            app:riv_corner_radius="15dp"
+                            android:layout_marginHorizontal="10dp"/>
+
+                        <com.makeramen.roundedimageview.RoundedImageView
+
+                            android:layout_width="150dp"
+                            android:layout_height="match_parent"
+                            android:contentDescription="@null"
+                            android:src="@drawable/orig"
+                            app:riv_corner_radius="15dp"
+                            android:layout_marginHorizontal="10dp"/>
+                        <com.makeramen.roundedimageview.RoundedImageView
+
+                            android:layout_width="150dp"
+                            android:layout_height="match_parent"
+                            android:contentDescription="@null"
+                            android:src="@drawable/orig"
+                            app:riv_corner_radius="15dp"
+                            android:layout_marginHorizontal="10dp"/>
+
+
+                    </LinearLayout>
+
+                </HorizontalScrollView>
+            </FrameLayout>
+
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/viewPager"
                 android:layout_width="match_parent"
-                android:layout_height="250dp"
-                android:contentDescription="@null">
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent">
-
-                    <com.makeramen.roundedimageview.RoundedImageView
-
-                        android:layout_width="150dp"
-                        android:layout_height="match_parent"
-                        android:contentDescription="@null"
-                        android:src="@drawable/orig"
-                        app:riv_corner_radius="15dp"
-                        android:layout_marginHorizontal="10dp"/>
-                    <com.makeramen.roundedimageview.RoundedImageView
-
-                        android:layout_width="150dp"
-                        android:layout_height="match_parent"
-                        android:contentDescription="@null"
-                        android:src="@drawable/orig"
-                        app:riv_corner_radius="15dp"
-                        android:layout_marginHorizontal="10dp"/>
-                    <com.makeramen.roundedimageview.RoundedImageView
-
-                        android:layout_width="150dp"
-                        android:layout_height="match_parent"
-                        android:contentDescription="@null"
-                        android:src="@drawable/orig"
-                        app:riv_corner_radius="15dp"
-                        android:layout_marginHorizontal="10dp"/>
-                    <com.makeramen.roundedimageview.RoundedImageView
-
-                        android:layout_width="150dp"
-                        android:layout_height="match_parent"
-                        android:contentDescription="@null"
-                        android:src="@drawable/orig"
-                        app:riv_corner_radius="15dp"
-                        android:layout_marginHorizontal="10dp"/>
-
-
-                </LinearLayout>
-
-            </HorizontalScrollView>
+                android:layout_height="200dp"
+                android:contentDescription="@null"
+                android:layout_marginTop="30dp"/>
         </LinearLayout>
     </ScrollView>
 
@@ -385,5 +438,6 @@
 
     </LinearLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
 
+
+</androidx.constraintlayout.widget.ConstraintLayout>

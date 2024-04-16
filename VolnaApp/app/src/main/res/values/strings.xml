@@ -5,12 +5,12 @@
     <string name="ser_b">Сериалы</string>
     <string name="bm_b">Закладки</string>
 
-    <string name="main_poster_1">Марсианин</string>
-    <string name="main_poster_1_2">хуё моё</string>
-    <string name="main_poster_2">Фанта</string>
-    <string name="main_poster_2_2">из фантастик</string>
-    <string name="main_poster_3">Матрикс</string>
-    <string name="main_poster_3_2">хуятрикс</string>
+    <string name="main_poster_1">Фильм 1</string>
+    <string name="main_poster_1_2">Описание 1</string>
+    <string name="main_poster_2">Фильм 2</string>
+    <string name="main_poster_2_2">Описание 2</string>
+    <string name="main_poster_3">Фильм 3</string>
+    <string name="main_poster_3_2">Описание 3</string>
 
     <string name="comedy">Комедии</string>
     <string name="family">Фмльмы для всей семьи</string>
