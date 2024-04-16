@@ -17,21 +17,29 @@ import com.google.gson.JsonArray;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
+import org.apache.http.NameValuePair;
 import org.apache.http.client.ClientProtocolException;
+import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpGet;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.entity.BasicHttpEntity;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
+import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.util.EntityUtils;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
     TextView text;
     ImageView img;
+    JsonArray JSONresponse;
 
     class ImageTask extends AsyncTask<String, Void, Bitmap>{
 
@@ -60,7 +68,11 @@ public class MainActivity extends AppCompatActivity {
         protected String doInBackground(String... urls) {
             CloseableHttpClient httpClient = HttpClients.createDefault();
             try {
-                HttpResponse response = httpClient.execute(new HttpGet(urls[0]));
+                HttpPost httppost = new HttpPost(urls[0]);
+                List<NameValuePair> params = new ArrayList<NameValuePair>(2);
+                params.add(new BasicNameValuePair("query", "SELECT * FROM video LIMIT 3"));
+                httppost.setEntity(new UrlEncodedFormEntity(params, "UTF-8"));
+                HttpResponse response = httpClient.execute(httppost);
                 HttpEntity entity = response.getEntity();
                 String responseString = EntityUtils.toString(entity);
                 return responseString;
@@ -72,11 +84,8 @@ public class MainActivity extends AppCompatActivity {
         }
         protected void onPostExecute(String response){
             Gson gson = new Gson();
-            JsonArray jsonArray = gson.fromJson(response, JsonArray.class);
-            String json = jsonArray.get(0).toString();
-            Movie shrek = gson.fromJson(json, Movie.class);
-            text.setText(shrek.title);
-            new ImageTask().execute("http://176.77.93.89/content/posters/36c57d9f4443e02ed06b6cdd408d78a1.jpg");
+            JSONresponse = gson.fromJson(response, JsonArray.class);
+
         }
     }
 
@@ -86,8 +95,12 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         text = findViewById(R.id.texti);
         img = findViewById(R.id.imageView2);
-        String url = "http://176.77.93.89/main_screeen.php";
+        String url = "http://176.77.109.225/main_screeen.php";
         new VolnaQueryTask().execute(url);
+        String JSONresponse = jsonArray.get(0).toString();
+        Movie shrek = gson.fromJson(json, Movie.class);
+        text.setText(shrek.title);
+        new ImageTask().execute("http://176.77.109.225/content/posters/36c57d9f4443e02ed06b6cdd408d78a1.jpg");
 
     }
     public void to_cinema(View view){

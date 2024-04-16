@@ -49,8 +49,7 @@
                             android:layout_height="match_parent"
                             android:contentDescription="@null"
                             android:src="@drawable/c1b660b1e078116a3254054b2f641e44"
-                            app:riv_corner_radius="15dp"
-                            />
+                            app:riv_corner_radius="15dp" />
 
                         <TextView
                             android:id="@+id/texti"
