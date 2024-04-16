@@ -103,6 +103,8 @@ public class CinemaActivity extends AppCompatActivity {
         try {
             JSONObject json = new JSONObject(value);
             link = json.getString("link");
+            TextView title = findViewById(R.id.name_film);
+            title.setText(json.getString("title"));
             new VolnaGetTask().execute(json.getString("info"));
         } catch (JSONException e) {
             throw new RuntimeException(e);
