@@ -12,7 +12,7 @@
     <string name="main_poster_3">Фильм 3</string>
     <string name="main_poster_3_2">Описание 3</string>
 
-    <string name="comedy">Комедии</string>
-    <string name="family">Фмльмы для всей семьи</string>
+    <string name="comedy">Комедии  &#10095;</string>
+    <string name="family">Фмльмы для всей семьи  &#10095;</string>
 
 </resources>
