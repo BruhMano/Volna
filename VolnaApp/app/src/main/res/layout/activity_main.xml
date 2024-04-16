@@ -8,6 +8,24 @@
     android:background="@color/background"
     tools:context=".MainActivity">
 
+    <ImageView
+        android:layout_width="70dp"
+        android:layout_height="142dp"
+        android:layout_gravity="top|end"
+        android:src="@drawable/wave3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:layout_width="220dp"
+        android:layout_height="150dp"
+        android:layout_marginBottom="10dp"
+
+        android:src="@drawable/wave"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -31,11 +49,7 @@
                 android:layout_height="220dp"
                 android:layout_marginTop="30dp">
 
-                <ImageView
-                    android:layout_width="70dp"
-                    android:layout_height="142dp"
-                    android:layout_gravity="end"
-                    android:src="@drawable/wave3" />
+
 
                 <HorizontalScrollView
                     android:layout_width="match_parent"
@@ -182,11 +196,7 @@
 
                 android:layout_width="wrap_content"
                 android:layout_height="250dp">
-                <ImageView
-                    android:layout_width="220dp"
-                    android:layout_height="150dp"
-                    android:src="@drawable/wave"
-                    android:layout_gravity="top|start" />
+
                 <HorizontalScrollView
                     android:layout_width="match_parent"
                     android:layout_height="250dp"
