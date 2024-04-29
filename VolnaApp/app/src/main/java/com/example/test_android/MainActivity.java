@@ -93,62 +93,60 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    class VolnaQueryPostTask extends AsyncTask<String, Void, String>{
-
-        @Override
-        protected String doInBackground(String... queries) {
-            CloseableHttpClient httpClient = HttpClients.createDefault();
-            try {
-                HttpPost httppost = new HttpPost("http://176.77.109.225/main_screeen.php");
-                List<NameValuePair> params = new ArrayList<NameValuePair>(2);
-                params.add(new BasicNameValuePair("query", queries[0]));
-                httppost.setEntity(new UrlEncodedFormEntity(params, "UTF-8"));
-                HttpResponse response = httpClient.execute(httppost);
-                HttpEntity entity = response.getEntity();
-                String responseString = EntityUtils.toString(entity);
-                return responseString;
-            } catch (ClientProtocolException e) {
-                throw new RuntimeException(e);
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-        }
-        protected void onPostExecute(String response){
-            Gson gson = new Gson();
-            JSONresponse = gson.fromJson(response, JsonArray.class);
-            int[][] ids =  {{R.id.img1, R.id.title1, R.id.desc1},
-                           {R.id.img2, R.id.title2, R.id.desc2},
-                           {R.id.img3, R.id.title3, R.id.desc3}};
-            for(int i = 0;i<3;++i) {
-                String json = JSONresponse.get(i).toString();
-                TextView text = findViewById(ids[i][1]);
-                ImageView img = findViewById(ids[i][0]);
-                TextView description = findViewById(ids[i][2]);
-                Movie movie = gson.fromJson(json, Movie.class);
-                new VolnaGetTask().execute(movie.info);
-                text.setText(movie.title);
-                description.setText(movie.title);
-//                try {
-//                    description.setText(jsonObj.getString("year")+" "+jsonObj.getString("ageRating")+"+ ");
-//                } catch (JSONException e) {
-//                    throw new RuntimeException(e);
-//                }
-                //new ImageTask().execute("http://176.77.109.225/content/posters/36c57d9f4443e02ed06b6cdd408d78a1.jpg");
-            }
-        }
-    }
+//    class VolnaQueryPostTask extends AsyncTask<String, Void, String>{
+//
+//        @Override
+//        protected String doInBackground(String... queries) {
+//            CloseableHttpClient httpClient = HttpClients.createDefault();
+//            try {
+//                HttpPost httppost = new HttpPost("http://176.77.109.225/main_screeen.php");
+//                List<NameValuePair> params = new ArrayList<NameValuePair>(2);
+//                params.add(new BasicNameValuePair("query", queries[0]));
+//                httppost.setEntity(new UrlEncodedFormEntity(params, "UTF-8"));
+//                HttpResponse response = httpClient.execute(httppost);
+//                HttpEntity entity = response.getEntity();
+//                String responseString = EntityUtils.toString(entity);
+//                return responseString;
+//            } catch (ClientProtocolException e) {
+//                throw new RuntimeException(e);
+//            } catch (IOException e) {
+//                throw new RuntimeException(e);
+//            }
+//        }
+//        protected void onPostExecute(String response){
+//            Gson gson = new Gson();
+//            JSONresponse = gson.fromJson(response, JsonArray.class);
+//            int[][] ids =  {{R.id.img1, R.id.title1, R.id.desc1},
+//                           {R.id.img2, R.id.title2, R.id.desc2},
+//                           {R.id.img3, R.id.title3, R.id.desc3}};
+//            for(int i = 0;i<3;++i) {
+//                String json = JSONresponse.get(i).toString();
+//                TextView text = findViewById(ids[i][1]);
+//                ImageView img = findViewById(ids[i][0]);
+//                TextView description = findViewById(ids[i][2]);
+//                Movie movie = gson.fromJson(json, Movie.class);
+//                new VolnaGetTask().execute(movie.info);
+//                text.setText(movie.title);
+//                description.setText(movie.title);
+////                try {
+////                    description.setText(jsonObj.getString("year")+" "+jsonObj.getString("ageRating")+"+ ");
+////                } catch (JSONException e) {
+////                    throw new RuntimeException(e);
+////                }
+//                //new ImageTask().execute("http://176.77.109.225/content/posters/36c57d9f4443e02ed06b6cdd408d78a1.jpg");
+//            }
+//        }
+//    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         String query = "SELECT * FROM video LIMIT 3";
-        new VolnaQueryPostTask().execute(query);
+        //new VolnaQueryPostTask().execute(query);
     }
-    public void to_movie1(View view){
-        String json = JSONresponse.get(0).toString();
+    public void to_movieExample(View view){
         Intent intent = new Intent(this, CinemaActivity.class);
-        intent.putExtra("json",json);
         startActivity(intent);
     }
     public void to_movie2(View view){

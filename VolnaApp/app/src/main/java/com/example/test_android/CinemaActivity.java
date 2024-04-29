@@ -95,20 +95,20 @@ public class CinemaActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cinema);
-        Bundle extras = getIntent().getExtras();
-        String value = "";
-        if (extras != null) {
-            value = extras.getString("json");
-        }
-        try {
-            JSONObject json = new JSONObject(value);
-            link = json.getString("link");
-            TextView title = findViewById(R.id.name_film);
-            title.setText(json.getString("title"));
-            new VolnaGetTask().execute(json.getString("info"));
-        } catch (JSONException e) {
-            throw new RuntimeException(e);
-        }
+//        Bundle extras = getIntent().getExtras();
+//        String value = "";
+//        if (extras != null) {
+//            value = extras.getString("json");
+//        }
+//        try {
+//            JSONObject json = new JSONObject(value);
+//            link = json.getString("link");
+//            TextView title = findViewById(R.id.name_film);
+//            title.setText(json.getString("title"));
+//            new VolnaGetTask().execute(json.getString("info"));
+//        } catch (JSONException e) {
+//            throw new RuntimeException(e);
+//        }
 
     }
     public void to_video(View view){
