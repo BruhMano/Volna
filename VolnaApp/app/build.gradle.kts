@@ -58,6 +58,7 @@ dependencies {
     implementation ("com.makeramen:roundedimageview:2.3.0")
     implementation("org.apache.httpcomponents:httpclient:4.3.4")
     implementation("com.google.code.gson:gson:2.7")
+    implementation ("pl.droidsonroids.gif:android-gif-drawable:1.2.17")
 
 
 
