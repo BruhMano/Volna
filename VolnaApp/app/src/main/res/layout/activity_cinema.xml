@@ -11,13 +11,22 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
+        <TextView
+            android:id="@+id/resultDownload"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/allerta"
+            android:gravity="center"
+            android:textColor="@color/design_default_color_error"
+            android:textSize="20sp"
+            android:textStyle="bold" />
         <ImageView
             android:id="@+id/imageCinema"
             android:layout_width="match_parent"
             android:layout_height="450dp"
-            android:scaleType="center"
+            android:scaleType="fitCenter"
             android:src="@drawable/brother2"
-            >
+            android:contentDescription="NameFilm">
         </ImageView>
 
         <TextView
@@ -105,14 +114,17 @@
                 android:layout_height="40dp"
                 android:background="@null"
                 android:scaleType="fitCenter"
+                android:onClick="toVideo"
                 android:src="@drawable/play"/>
+
             <ImageButton
                 android:id="@+id/download_video"
-                android:layout_width="60dp"
-                android:layout_height="30dp"
+                android:layout_width="53dp"
+                android:layout_height="20dp"
                 android:background="@null"
                 android:scaleType="fitCenter"
-                android:src="@drawable/download"/>
+                android:src="@drawable/download"
+                android:onClick="downloadFilm"/>
         </LinearLayout>
 
         <TextView
