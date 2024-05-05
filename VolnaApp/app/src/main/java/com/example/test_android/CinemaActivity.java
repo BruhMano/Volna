@@ -32,6 +32,7 @@ import java.net.URL;
 public class CinemaActivity extends AppCompatActivity {
 
     String link;
+    String link_name;
 
     class ImageTask extends AsyncTask<String, Void, Bitmap>{
 
@@ -117,4 +118,20 @@ public class CinemaActivity extends AppCompatActivity {
         intent.putExtra("link",link);
         startActivity(intent);
     }
+
+    public void download(View view) throws JSONException {
+
+        Bundle extras = getIntent().getExtras();
+        String value = "";
+        if (extras != null) {
+            value = extras.getString("json");
+        }
+        JSONObject json = new JSONObject(value);
+        link_name = json.getString("link");
+
+        link = ("http://176.77.109.225/content/films/" + link_name);
+
+        new VideoDownloader(this, link_name).execute(link);
+    }
+
 }
