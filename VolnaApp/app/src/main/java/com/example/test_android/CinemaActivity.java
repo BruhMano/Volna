@@ -2,14 +2,22 @@ package com.example.test_android;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
+import android.app.DownloadManager;
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.Environment;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.MediaController;
 import android.widget.TextView;
 
 import com.google.gson.Gson;
@@ -32,6 +40,7 @@ import java.net.URL;
 public class CinemaActivity extends AppCompatActivity {
 
     String link;
+    String link_name;
 
     class ImageTask extends AsyncTask<String, Void, Bitmap>{
 
@@ -117,4 +126,23 @@ public class CinemaActivity extends AppCompatActivity {
         intent.putExtra("link",link);
         startActivity(intent);
     }
+
+    public void download(View view) throws JSONException {
+
+        Bundle extras = getIntent().getExtras();
+        String value = "";
+        if (extras != null) {
+            value = extras.getString("json");
+        }
+        JSONObject json = new JSONObject(value);
+        link_name = json.getString("link");
+
+        link = ("http://176.77.109.225/content/films/" + link_name);
+
+        new VideoDownloader(this, link_name).execute(link);
+    }
+
+
+
+
 }

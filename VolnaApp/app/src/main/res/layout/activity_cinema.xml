@@ -111,6 +111,7 @@
                 android:layout_height="30dp"
                 android:background="@null"
                 android:scaleType="fitCenter"
+                android:onClick="download"
                 android:src="@drawable/download"/>
         </LinearLayout>
         <TextView
