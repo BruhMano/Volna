@@ -60,7 +60,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:fontFamily="@font/roboto_bold"
-                    android:text="imdb "
+                    android:text="IMDb: "
                     android:textColor="@color/cinema_text"
                     android:textSize="14sp" />
 
@@ -136,7 +136,14 @@
                 android:onClick="download"
                 android:src="@drawable/download" />
         </LinearLayout>
-
+        <TextView
+            android:id="@+id/resultDownload"
+            android:layout_width="match_parent"
+            android:layout_height="16dp"
+            android:fontFamily="@font/allerta"
+            android:gravity="center"
+            android:textColor="#E91E63"
+            android:textSize="12sp"/>
         <TextView
             android:id="@+id/descriptions"
             android:layout_width="371dp"
@@ -176,13 +183,14 @@
             android:layout_weight="1"
             android:scaleType="fitXY">
 
-            <ImageView
+            <ImageButton
                 android:layout_width="25dp"
                 android:layout_height="25dp"
                 android:layout_alignParentBottom="true"
                 android:layout_centerHorizontal="true"
                 android:layout_marginBottom="20dp"
                 android:contentDescription="@null"
+                android:onClick="goHome"
                 android:src="@drawable/main_but" />
 
             <TextView

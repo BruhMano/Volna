@@ -38,6 +38,7 @@
         </activity>
         <activity
             android:name=".VideoActivity"
+            android:screenOrientation="landscape"
             android:exported="true">
         </activity>
 
