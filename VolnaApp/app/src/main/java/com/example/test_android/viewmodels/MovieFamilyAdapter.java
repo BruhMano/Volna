@@ -65,11 +65,11 @@ public class MovieFamilyAdapter extends RecyclerView.Adapter<MovieFamilyAdapter.
     public void setMovies(List<Movie> movies) {
         this.movies = movies
                 .stream()
-                //.filter(c -> c.getCategories().contains(Category.comedy.name())
-                //        || c.getCategories().contains(Category.drama.name())
-                //        || c.getCategories().contains(Category.adventure.name())
-                //        || c.getCategories().contains(Category.animation.name())
-                //)
+                .filter(c -> c.getCategories().contains(Category.comedy.name())
+                        || c.getCategories().contains(Category.drama.name())
+                        || c.getCategories().contains(Category.adventure.name())
+                        || c.getCategories().contains(Category.animation.name())
+                )
                 .collect(Collectors.toList());
         notifyDataSetChanged();
     }

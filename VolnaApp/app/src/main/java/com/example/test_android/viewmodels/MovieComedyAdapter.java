@@ -63,7 +63,7 @@ public class MovieComedyAdapter extends RecyclerView.Adapter<MovieComedyAdapter.
     public void setMovies(List<Movie> movies) {
         this.movies = movies
                 .stream()
-                //.filter(c -> c.getCategories().contains(Category.comedy.name()))
+                .filter(c -> c.getCategories().contains(Category.comedy.name()))
                 .collect(Collectors.toList());
         notifyDataSetChanged();
     }
