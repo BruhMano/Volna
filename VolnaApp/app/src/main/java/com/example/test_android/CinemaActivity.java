@@ -80,17 +80,12 @@ public class CinemaActivity extends AppCompatActivity {
 
     public void download(View view) throws JSONException {
 
-        Bundle extras = getIntent().getExtras();
-        String value = "";
-        if (extras != null) {
-            value = extras.getString("json");
-        }
-        JSONObject json = new JSONObject(value);
-        link_name = json.getString("link");
+        Movie movie = (Movie) getIntent().getSerializableExtra(EXTRA_MOVIE);
+        String link = BASE_URL + PATH_FILM + movie.getLink();
+        Log.d(this.getClass().getSimpleName(), "URL Film: " + link);
 
-        link = ("http://176.77.109.225/content/films/" + link_name);
 
-        new VideoDownloader(this, link_name).execute(link);
+        new VideoDownloader(this, movie.getLink()).execute(link);
     }
 
     public void goHomeOperation(View view) {
