@@ -6,8 +6,10 @@ import static com.example.test_android.api.UrlConstant.PATH_FILM;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Environment;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -19,8 +21,12 @@ import com.example.test_android.model.Movie;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.File;
+
 public class CinemaActivity extends AppCompatActivity {
     private final static String EXTRA_MOVIE = "film";
+
+    private boolean isDownloaded = false;
     String link;
     String link_name;
     private ImageView pictureMovieAboutMovieActivity;
@@ -36,7 +42,20 @@ public class CinemaActivity extends AppCompatActivity {
         intent.putExtra(EXTRA_MOVIE, movie);
         return intent;
     }
-
+    public void isFilmExists(){
+        Movie movie = (Movie) getIntent().getSerializableExtra(EXTRA_MOVIE);
+        File directory = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), "volna");
+        File film = new File(directory,movie.getLink());
+        if (film.exists()){
+            isDownloaded = true;
+            link = film.getAbsolutePath();
+            Log.d(this.getClass().getSimpleName(), "URL Film: " + film.getAbsolutePath());
+            ImageButton downloadButton = findViewById(R.id.download_video);
+            downloadButton.setOnClickListener(this::to_video);
+            ImageView imageView = findViewById(R.id.download_video);
+            imageView.setImageResource(R.drawable.play_download);
+        }
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,6 +65,7 @@ public class CinemaActivity extends AppCompatActivity {
         initViews();
 
         Movie movie = (Movie) getIntent().getSerializableExtra(EXTRA_MOVIE);
+        isFilmExists();
         Glide.with(this)
                 .load(movie.getVertical_poster())
                 .into(pictureMovieAboutMovieActivity);
@@ -70,9 +90,10 @@ public class CinemaActivity extends AppCompatActivity {
 
     public void to_video(View view){
         Movie movie = (Movie) getIntent().getSerializableExtra(EXTRA_MOVIE);
-        String link = BASE_URL + PATH_FILM + movie.getLink();
-        Log.d(this.getClass().getSimpleName(), "URL Film: " + link);
-
+        if (!isDownloaded){
+            link = BASE_URL + PATH_FILM + movie.getLink();
+            Log.d(this.getClass().getSimpleName(), "URL Film: " + link);
+        }
         Intent intent = new Intent(CinemaActivity.this, VideoActivity.class);
         intent.putExtra("link", link);
         CinemaActivity.this.startActivity(intent);
@@ -83,12 +104,11 @@ public class CinemaActivity extends AppCompatActivity {
         Movie movie = (Movie) getIntent().getSerializableExtra(EXTRA_MOVIE);
         String link = BASE_URL + PATH_FILM + movie.getLink();
         Log.d(this.getClass().getSimpleName(), "URL Film: " + link);
-
-
         new VideoDownloader(this, movie.getLink()).execute(link);
+        isFilmExists();
     }
 
-    public void goHomeOperation(View view) {
+    public void goHome(View view) {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }

@@ -11,7 +11,7 @@ import android.util.Log;
 import android.widget.MediaController;
 import android.widget.VideoView;
 
-public class VideoActivity extends AppCompatActivity {
+public class DownloadedVideoActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,12 +20,11 @@ public class VideoActivity extends AppCompatActivity {
         VideoView videoView = findViewById(R.id.videoView);
         Bundle extras = getIntent().getExtras();
         String value = extras.getString("link");
-        Log.d(this.getClass().getSimpleName(), "URL Film: " + value);
         Log.i(this.getClass().getSimpleName(), "link:" + value);
         MediaController mediaController = new MediaController(this);
         videoView.setMediaController(mediaController);
         mediaController.setAnchorView(videoView);
-        Uri uri = Uri.parse(value);
+        Uri uri = Uri.parse("android.resource://" + value);
         mediaController.setAnchorView(videoView);
         videoView.setVideoURI(uri);
         videoView.requestFocus();
