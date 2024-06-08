@@ -1,232 +1,268 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/cinema"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/cinema_background"
-    tools:context=".CinemaActivity">
+    android:background="@color/background"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/imageCinema"
+        android:layout_width="match_parent"
+        android:layout_height="541dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/interstellar" />
+
+    <ImageView
+        android:id="@+id/CinemaShadow"
+        android:layout_width="411dp"
+        android:layout_height="542dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/shadow2"
+        app:layout_constraintBottom_toBottomOf="@+id/main" />
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-
-        <ImageView
-            android:id="@+id/imageCinema"
-            android:layout_width="match_parent"
-            android:layout_height="450dp"
-            android:scaleType="centerCrop"
-            android:src="@drawable/interstellar">
-        </ImageView>
+        android:layout_height="400dp"
+        android:orientation="vertical"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout2">
 
         <TextView
             android:id="@+id/name_film"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/allerta"
+            android:fontFamily="@font/roboto_bold"
             android:gravity="center"
-            android:text="БРАТ 2"
+            android:text="Брат 2 (2000)"
             android:textColor="@color/cinema_name_film"
-            android:textSize="20sp"
+            android:layout_marginVertical="10dp"
+            android:textSize="30sp"
             android:textStyle="bold" />
+
         <LinearLayout
-            android:layout_width="270dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingTop="2dp"
-            android:layout_gravity="center_horizontal"
-            android:orientation="horizontal">
+            android:layout_gravity="center"
+            android:orientation="horizontal"
+            android:paddingTop="2dp">
+
             <LinearLayout
-                android:layout_width="65dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_weight="1">
+                android:orientation="horizontal">
+
                 <TextView
                     android:id="@+id/rating"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:textColor="@color/cinema_text"
                     android:fontFamily="@font/roboto_bold"
-                    android:textSize="20sp"
-                    android:text="imdb"/>
+                    android:text="IMDb: "
+                    android:textColor="@color/cinema_text"
+                    android:textSize="14sp" />
+
                 <TextView
                     android:id="@+id/rating_value"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:textColor="@color/cinema_text"
                     android:fontFamily="@font/roboto_bold"
-                    android:textSize="20sp"
-                    android:text="8.70"/>
+                    android:text="8.70"
+                    android:textColor="@color/cinema_text"
+                    android:textSize="14sp" />
             </LinearLayout>
+
             <TextView
                 android:id="@+id/age"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:textColor="@color/cinema_text"
                 android:fontFamily="@font/roboto_bold"
-                android:textSize="20sp"
-                android:text="18+"/>
+                android:gravity="center"
+                android:layout_marginHorizontal="50dp"
+                android:text="18+"
+                android:textColor="@color/cinema_text"
+                android:textSize="14sp" />
+
             <TextView
                 android:id="@+id/duration"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:textColor="@color/cinema_text"
                 android:fontFamily="@font/roboto_bold"
-                android:textSize="20sp"
-                android:text="169 мин."/>
+                android:gravity="center"
+                android:text="169 мин."
+                android:textColor="@color/cinema_text"
+                android:textSize="14sp" />
         </LinearLayout>
+
         <TextView
             android:id="@+id/genre"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:textColor="@color/cinema_text"
-            android:textStyle="normal"
             android:fontFamily="@font/roboto_bold"
-            android:textSize="17sp"
-            android:text="фантастика, драма, приключения"/>
+            android:gravity="center"
+            android:layout_marginVertical="10dp"
+            android:text="фантастика, драма, приключения"
+            android:textColor="@color/cinema_text"
+            android:textSize="14sp"
+            android:textStyle="normal" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center">
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
             <ImageButton
                 android:id="@+id/watch_video"
-                android:layout_width="120dp"
-                android:layout_height="40dp"
+                android:layout_width="230dp"
+                android:layout_height="60dp"
                 android:background="@null"
-                android:scaleType="fitCenter"
                 android:onClick="to_video"
-                android:src="@drawable/play"/>
+                android:layout_marginRight="20dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/play1" />
+
             <ImageButton
                 android:id="@+id/download_video"
                 android:layout_width="60dp"
-                android:layout_height="30dp"
+                android:layout_height="60dp"
                 android:background="@null"
+                android:layout_marginRight="10dp"
                 android:scaleType="fitCenter"
-                android:src="@drawable/download"/>
+                android:onClick="download"
+                android:src="@drawable/download" />
         </LinearLayout>
         <TextView
-            android:id="@+id/descriptions"
+            android:id="@+id/resultDownload"
             android:layout_width="match_parent"
-            android:layout_height="110dp"
+            android:layout_height="16dp"
+            android:fontFamily="@font/allerta"
+            android:gravity="center"
+            android:textColor="#E91E63"
+            android:textSize="12sp"/>
+        <TextView
+            android:id="@+id/descriptions"
+            android:layout_width="371dp"
+            android:layout_height="137dp"
+            android:layout_marginHorizontal="25dp"
+            android:layout_marginVertical="20dp"
             android:fontFamily="@font/roboto_bold"
             android:gravity="left"
             android:text="Демобилизовавшись, Данила Багров вернулся в родной городок. Но скучная жизнь российской провинции не устраивала его, и он решился податься в Петербург, где, по слухам, уже несколько лет процветает его старший брат. Данила нашел брата. Но все оказалось не так просто — брат работает наемным убийцей."
             android:textColor="@color/cinema_text_desc"
-            android:textSize="12sp" />
+            android:textSize="15sp" />
 
     </LinearLayout>
 
 
     <LinearLayout
-        android:id="@+id/bottomPanel"
+        android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="3dp"
+        android:layout_marginBottom="49dp"
+        android:background="@color/panel_word"
+        app:layout_constraintBottom_toBottomOf="@+id/linearLayout1" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/panel"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_gravity="bottom"
-        android:background="@color/panel">
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:orientation="vertical"
-            android:layout_marginTop="@dimen/cardview_default_radius">
-            <ImageButton
-                android:layout_width="35dp"
-                android:layout_height="35dp"
-                android:background="@null"
-                android:scaleType="fitCenter"
-                android:src="@drawable/main_but">
-            </ImageButton>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/main_b"
-                android:fontFamily="@font/roboto_bold"
-                android:textSize="15sp"
-                android:textColor="@color/panel_word"/>
-        </LinearLayout>
+        app:layout_constraintStart_toStartOf="parent">
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:gravity="center"
-            android:orientation="vertical"
-            android:layout_marginTop="@dimen/cardview_default_radius">
+            android:scaleType="fitXY">
+
             <ImageButton
-                android:layout_width="35dp"
-                android:layout_height="35dp"
-                android:background="@null"
-                android:scaleType="fitCenter"
-                android:src="@drawable/kino_but"
-                android:contentDescription="@null">
-            </ImageButton>
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="20dp"
+                android:contentDescription="@null"
+                android:onClick="goHome"
+                android:src="@drawable/main_but" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="@font/roboto_bold"
+                android:text="@string/main_b"
+                android:textColor="@color/panel_word"
+                android:textSize="12sp" />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:scaleType="fitXY">
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="20dp"
+                android:clickable="true"
+                android:contentDescription="@null"
+                android:focusable="true"
+                android:onClick="to_movie"
+                android:src="@drawable/kino_but" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="@font/roboto_bold"
                 android:text="@string/kino_b"
-                android:fontFamily="@font/roboto_bold"
-                android:textSize="15sp"
-                android:textColor="@color/panel_word"/>
-        </LinearLayout>
-        <LinearLayout
+                android:textColor="@color/panel_word"
+                android:textSize="12sp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:orientation="vertical"
-            android:gravity="center"
-            android:layout_marginTop="@dimen/cardview_default_radius">
-            <ImageButton
-                android:layout_width="35dp"
-                android:layout_height="35dp"
-                android:src="@drawable/ser_but"
-                android:background="@null"
-                android:scaleType="fitCenter"
-                android:contentDescription="@null">
-            </ImageButton>
+            android:scaleType="fitXY">
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="20dp"
+                android:contentDescription="@null"
+                android:src="@drawable/bm_but" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/ser_b"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
                 android:fontFamily="@font/roboto_bold"
-                android:textSize="15sp"
-                android:textColor="@color/panel_word"/>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:orientation="vertical"
-            android:layout_marginTop="@dimen/cardview_default_radius">
-            <ImageButton
-                android:layout_width="35dp"
-                android:layout_height="35dp"
-                android:src="@drawable/bm_but"
-                android:background="@null"
-                android:scaleType="fitCenter"
-                android:contentDescription="@null">
-            </ImageButton>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
                 android:text="@string/bm_b"
-                android:fontFamily="@font/roboto_bold"
-                android:textSize="15sp"
-                android:textColor="@color/panel_word"/>
-        </LinearLayout>
+                android:textColor="@color/panel_word"
+                android:textSize="12sp" />
+
+        </RelativeLayout>
+
+
     </LinearLayout>
-</FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

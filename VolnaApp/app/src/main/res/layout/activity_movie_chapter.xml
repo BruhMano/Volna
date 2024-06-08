@@ -6,7 +6,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background"
-    tools:context=".MainActivity">
+    tools:context=".Movie_chapter">
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="3dp"
+        app:layout_constraintBottom_toBottomOf="@+id/filterButton"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
     <ImageView
         android:layout_width="150dp"
@@ -24,7 +35,7 @@
         android:layout_marginTop="80dp"
         android:layout_marginBottom="50dp"
         android:fillViewport="true"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -35,70 +46,16 @@
             android:layout_height="wrap_content"
             android:contentDescription="@null"
             android:orientation="vertical">
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="200dp"
-                android:layout_marginTop="10dp">
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@null" />
-                        <RelativeLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="10dp"
-                            android:layout_marginEnd="10dp">
-                            <androidx.recyclerview.widget.RecyclerView
-                                android:id="@+id/recycler_allMoviesMainActivity"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:contentDescription="@null"
-                                tools:ignore="MissingConstraints"/>
-                        </RelativeLayout>
-                    </LinearLayout>
-            <TextView
-                android:id="@+id/textView7"
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_allMoviesMovieChapter"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="10dp"
-                android:fontFamily="@font/roboto_bold"
-                android:text="@string/comedy"
-                android:textColor="@color/white"
-                android:textSize="20sp" />
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/recycler_comedyMainActivity"
-                    android:layout_width="wrap_content"
-                    android:layout_height="250dp"
+                android:layout_height="match_parent"
 
-
-                    android:contentDescription="@null"
-                    app:riv_corner_radius="15dp"
-                    android:layout_marginHorizontal="10dp"
-                    tools:ignore="MissingConstraints" />
-            <TextView
-                android:id="@+id/textView8"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="10dp"
-                android:fontFamily="@font/roboto_bold"
-                android:text="@string/family"
-                android:textColor="@color/white"
-                android:textSize="20sp" />
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent">
-                        <androidx.recyclerview.widget.RecyclerView
-                            android:id="@+id/recycler_familyMainActivity"
-                            android:layout_width="wrap_content"
-                            android:layout_height="250dp"
-
-                            android:contentDescription="@null"
-                            app:riv_corner_radius="15dp"
-                            android:layout_marginHorizontal="10dp"
-                            tools:ignore="MissingConstraints" />
-                    </LinearLayout>
+                android:layout_marginHorizontal="0dp"
+                android:contentDescription="@null"
+                app:riv_corner_radius="15dp"
+                tools:ignore="MissingConstraints"/>
         </LinearLayout>
     </ScrollView>
     <LinearLayout
@@ -131,6 +88,7 @@
                 android:layout_centerHorizontal="true"
                 android:layout_marginBottom="20dp"
                 android:contentDescription="@null"
+                android:onClick="move_to_main"
                 android:src="@drawable/main_but" />
 
             <TextView
@@ -161,7 +119,7 @@
                 android:clickable="true"
                 android:contentDescription="@null"
                 android:focusable="true"
-                android:onClick="to_movieExample"
+
                 android:src="@drawable/kino_but" />
 
             <TextView
@@ -206,7 +164,7 @@
 
     </LinearLayout>
     <ProgressBar
-        android:id="@+id/progress_circular_loading_MainActivity"
+        android:id="@+id/progress_circular_loading_MovieChapter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:visibility="gone"

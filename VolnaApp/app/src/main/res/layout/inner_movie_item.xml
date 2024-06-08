@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="5dp"
+    android:layout_marginEnd="5dp">
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/action_image_Film_item"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:contentDescription="@null"
+            android:scaleType="centerCrop"
+            app:riv_corner_radius="15dp"
+            android:background="@color/background"
+            />
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/img10"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:contentDescription="@null"
+            android:scaleType="centerCrop"
+            android:src="@drawable/shadow"
+            app:riv_corner_radius="15dp" />
+    <FrameLayout
+        android:id="@+id/fragment_layout_view_tag"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:orientation="vertical"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="23px"
+        android:layout_marginTop="150dp"
+        android:layout_marginBottom="50dp">
+        <TextView
+            android:id="@+id/text_view_poster_film_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_bold"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            tools:text="Остров проклятых" />
+        <TextView
+            android:id="@+id/text_view_poster_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:fontFamily="@font/roboto_bold"
+            android:textColor="@android:color/white"
+            android:textSize="12sp"
+            tools:text="2009 триллер, детектив 18+" />
+    </FrameLayout>
+</androidx.cardview.widget.CardView>
